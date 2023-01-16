@@ -50,7 +50,8 @@ fi
 
 if [[ $release = 'focal' && `echo "$version < 8.0" | bc` == 1 ]]
 then
-    sudo apt-fast install -y \
+    sudo apt update
+    sudo apt install -y \
          php${version}-json \
          php${version}-xmlrpc
 fi
