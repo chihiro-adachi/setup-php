@@ -51,6 +51,8 @@ fi
 if [[ $release = 'focal' && `echo "$version < 8.0" | bc` == 1 ]]
 then
     sudo apt update
+    sudo apt upgrade
+#    sudo apt install php${version}-common
     sudo apt install -y \
          php${version}-json \
          php${version}-xmlrpc
