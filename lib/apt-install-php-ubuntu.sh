@@ -17,10 +17,10 @@ fi
 sudo apt-get update
 
 #if [[ $version = '5.6' ]] \
-       || [[ $version = '8.2' ]] \
-       || [[ $release = 'jammy' && `echo "$version < 8.1" | bc` == 1 ]] \
-       || [[ $release = 'focal' && `echo "$version < 7.4 || $version >= 8.0" | bc` == 1 ]] \
-       || [[ $release = 'bionic' && `echo "$version < 7.4 || $version >= 8.0" | bc` == 1 ]]
+#       || [[ $version = '8.2' ]] \
+#       || [[ $release = 'jammy' && `echo "$version < 8.1" | bc` == 1 ]] \
+#       || [[ $release = 'focal' && `echo "$version < 7.4 || $version >= 8.0" | bc` == 1 ]] \
+#       || [[ $release = 'bionic' && `echo "$version < 7.4 || $version >= 8.0" | bc` == 1 ]]
 #then
     sudo add-apt-repository ppa:ondrej/php
     sudo apt-fast install -y build-essential debconf-utils unzip autogen autoconf libtool pkg-config
