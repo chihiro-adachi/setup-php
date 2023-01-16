@@ -11,6 +11,8 @@ then
     sudo systemctl disable php${version}-fpm
 fi
 
+sudo apt-get autoclean
+sudo apt-get clean all
 sudo apt-get update
 
 if [[ $version = '5.6' ]] \
