@@ -12,16 +12,16 @@ then
     sudo systemctl disable php${version}-fpm
 fi
 
-sudo apt-get autoclean
-sudo apt-get clean all
+#sudo apt-get autoclean
+#sudo apt-get clean all
 sudo apt-get update
 
-if [[ $version = '5.6' ]] \
+#if [[ $version = '5.6' ]] \
        || [[ $version = '8.2' ]] \
        || [[ $release = 'jammy' && `echo "$version < 8.1" | bc` == 1 ]] \
        || [[ $release = 'focal' && `echo "$version < 7.4 || $version >= 8.0" | bc` == 1 ]] \
        || [[ $release = 'bionic' && `echo "$version < 7.4 || $version >= 8.0" | bc` == 1 ]]
-then
+#then
     sudo add-apt-repository ppa:ondrej/php
     sudo apt-fast install -y build-essential debconf-utils unzip autogen autoconf libtool pkg-config
 
@@ -46,15 +46,15 @@ then
          php${version}-xml \
          php${version}-xsl \
          php${version}-zip
-fi
+#fi
 
-if [[ $release = 'focal' && `echo "$version < 8.0" | bc` == 1 ]]
-then
-    sudo apt install php${version}-common=7.4.3-4ubuntu2.16 -y --allow-downgrades
-    sudo apt install -y \
-         php${version}-json \
-         php${version}-xmlrpc
-fi
+#if [[ $release = 'focal' && `echo "$version < 8.0" | bc` == 1 ]]
+#then
+#    sudo apt install php${version}-common=7.4.3-4ubuntu2.16 -y --allow-downgrades
+#    sudo apt install -y \
+#         php${version}-json \
+#         php${version}-xmlrpc
+#fi
 
 sudo apt-fast install -y \
      php${version}-dev \
